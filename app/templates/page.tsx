@@ -1,41 +1,41 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { FileText, ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import type { Template } from "@/lib/types"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { FileText, ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import type { Template } from "@/lib/types";
 
 export default function TemplatesPage() {
-  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
+  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
 
   const templates: Template[] = [
     {
       id: "modern",
       name: "Modern",
       description: "Clean and contemporary design with a sidebar",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/template-1.png",
     },
     {
       id: "minimal",
       name: "Minimal",
       description: "Simple and elegant with a focus on content",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/template-2.png",
     },
     {
       id: "professional",
       name: "Professional",
       description: "Traditional format ideal for corporate roles",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/template-3.png",
     },
     {
       id: "creative",
       name: "Creative",
       description: "Bold design for creative industries",
-      image: "/placeholder.svg?height=400&width=300",
+      image: "/template-4.png",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-purple-50">
@@ -53,9 +53,12 @@ export default function TemplatesPage() {
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Choose Your Resume Template</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Choose Your Resume Template
+            </h1>
             <p className="text-lg text-gray-600">
-              Select a template that best represents your professional style and career goals
+              Select a template that best represents your professional style and
+              career goals
             </p>
           </div>
 
@@ -80,14 +83,21 @@ export default function TemplatesPage() {
                   />
                 </div>
                 <div className="p-4 bg-white">
-                  <h3 className="font-bold text-gray-800 text-lg">{template.name}</h3>
+                  <h3 className="font-bold text-gray-800 text-lg">
+                    {template.name}
+                  </h3>
                   <p className="text-gray-600 mt-1">{template.description}</p>
                 </div>
                 {selectedTemplate === template.id && (
                   <div className="absolute inset-0 bg-indigo-600 bg-opacity-10 flex items-center justify-center">
                     <div className="bg-white rounded-lg shadow-lg p-3">
-                      <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
-                        <Link href={`/builder?template=${template.id}`}>Use This Template</Link>
+                      <Button
+                        asChild
+                        className="bg-indigo-600 hover:bg-indigo-700"
+                      >
+                        <Link href={`/builder?template=${template.id}`}>
+                          Use This Template
+                        </Link>
                       </Button>
                     </div>
                   </div>
@@ -97,14 +107,26 @@ export default function TemplatesPage() {
           </div>
 
           <div className="mt-12 flex justify-between">
-            <Button asChild variant="outline" className="border-indigo-200 text-indigo-700">
+            <Button
+              asChild
+              variant="outline"
+              className="border-indigo-200 text-indigo-700"
+            >
               <Link href="/" className="flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4" /> Back to Home
               </Link>
             </Button>
-            <Button asChild className="bg-indigo-600 hover:bg-indigo-700" disabled={!selectedTemplate}>
+            <Button
+              asChild
+              className="bg-indigo-600 hover:bg-indigo-700"
+              disabled={!selectedTemplate}
+            >
               <Link
-                href={selectedTemplate ? `/builder?template=${selectedTemplate}` : "#"}
+                href={
+                  selectedTemplate
+                    ? `/builder?template=${selectedTemplate}`
+                    : "#"
+                }
                 className="flex items-center gap-2"
               >
                 Continue <ArrowRight className="h-4 w-4" />
@@ -123,10 +145,12 @@ export default function TemplatesPage() {
                 ResumeAI
               </span>
             </div>
-            <p className="text-sm text-gray-600">© {new Date().getFullYear()} ResumeAI. All rights reserved.</p>
+            <p className="text-sm text-gray-600">
+              © {new Date().getFullYear()} ResumeAI. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

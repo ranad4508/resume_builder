@@ -1,41 +1,44 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Check } from "lucide-react"
-import type { TemplateId } from "@/lib/types"
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import type { TemplateId } from "@/lib/types";
 
 interface TemplateSelectorProps {
-  selectedTemplate: TemplateId
-  onSelectTemplate: (template: TemplateId) => void
+  selectedTemplate: TemplateId;
+  onSelectTemplate: (template: TemplateId) => void;
 }
 
-export function TemplateSelector({ selectedTemplate, onSelectTemplate }: TemplateSelectorProps) {
+export function TemplateSelector({
+  selectedTemplate,
+  onSelectTemplate,
+}: TemplateSelectorProps) {
   const templates = [
     {
       id: "modern" as TemplateId,
       name: "Modern",
       description: "Clean and contemporary design with a sidebar",
-      image: "/placeholder.svg?height=200&width=150",
+      image: "/template-1.png",
     },
     {
       id: "minimal" as TemplateId,
       name: "Minimal",
       description: "Simple and elegant with a focus on content",
-      image: "/placeholder.svg?height=200&width=150",
+      image: "/template-2.png",
     },
     {
       id: "professional" as TemplateId,
       name: "Professional",
       description: "Traditional format ideal for corporate roles",
-      image: "/placeholder.svg?height=200&width=150",
+      image: "/template-3.png",
     },
     {
       id: "creative" as TemplateId,
       name: "Creative",
       description: "Bold design for creative industries",
-      image: "/placeholder.svg?height=200&width=150",
+      image: "/template-4.png",
     },
-  ]
+  ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -45,7 +48,9 @@ export function TemplateSelector({ selectedTemplate, onSelectTemplate }: Templat
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           className={`relative cursor-pointer rounded-lg overflow-hidden border-2 transition-colors ${
-            selectedTemplate === template.id ? "border-indigo-600" : "border-gray-200 hover:border-indigo-300"
+            selectedTemplate === template.id
+              ? "border-indigo-600"
+              : "border-gray-200 hover:border-indigo-300"
           }`}
           onClick={() => onSelectTemplate(template.id)}
         >
@@ -68,5 +73,5 @@ export function TemplateSelector({ selectedTemplate, onSelectTemplate }: Templat
         </motion.div>
       ))}
     </div>
-  )
+  );
 }

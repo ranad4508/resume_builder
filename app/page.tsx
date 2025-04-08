@@ -1,8 +1,8 @@
-"use client"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { ArrowRight, FileText, Sparkles, Layers, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, FileText, Sparkles, Layers, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -48,11 +48,16 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-lg text-gray-600">
-                Build professional resumes in minutes with our AI-powered platform. Choose from multiple templates, get
-                content suggestions, and stand out from the crowd.
+                Build professional resumes in minutes with our AI-powered
+                platform. Choose from multiple templates, get content
+                suggestions, and stand out from the crowd.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-indigo-600 hover:bg-indigo-700"
+                >
                   <Link href="/builder" className="flex items-center gap-2">
                     Get Started <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -74,7 +79,11 @@ export default function Home() {
               className="relative"
             >
               <div className="relative z-10 bg-white rounded-xl shadow-xl overflow-hidden border border-indigo-100">
-                <img src="/placeholder.svg?height=600&width=500" alt="Resume preview" className="w-full h-auto" />
+                <img
+                  src="/hero.png"
+                  alt="Resume preview"
+                  className="w-full h-auto"
+                />
               </div>
               <div className="absolute -z-10 top-6 -right-6 w-full h-full bg-gradient-to-r from-indigo-300 to-purple-300 rounded-xl"></div>
             </motion.div>
@@ -89,9 +98,12 @@ export default function Home() {
           className="py-20"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              How It Works
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our platform makes resume creation simple, fast, and effective with AI assistance
+              Our platform makes resume creation simple, fast, and effective
+              with AI assistance
             </p>
           </div>
 
@@ -100,17 +112,20 @@ export default function Home() {
               {
                 icon: <Layers className="h-10 w-10 text-indigo-600" />,
                 title: "Choose a Template",
-                description: "Select from our collection of professionally designed resume templates",
+                description:
+                  "Select from our collection of professionally designed resume templates",
               },
               {
                 icon: <Sparkles className="h-10 w-10 text-indigo-600" />,
                 title: "AI-Powered Content",
-                description: "Get intelligent suggestions for your resume content based on your experience",
+                description:
+                  "Get intelligent suggestions for your resume content based on your experience",
               },
               {
                 icon: <Download className="h-10 w-10 text-indigo-600" />,
                 title: "Export & Share",
-                description: "Download your resume in multiple formats or share it directly with employers",
+                description:
+                  "Download your resume in multiple formats or share it directly with employers",
               },
             ].map((item, index) => (
               <motion.div
@@ -121,8 +136,12 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl shadow-sm border border-indigo-100 hover:shadow-md transition-shadow"
               >
-                <div className="bg-indigo-50 p-3 rounded-full w-fit mb-6">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
+                <div className="bg-indigo-50 p-3 rounded-full w-fit mb-6">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {item.title}
+                </h3>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
@@ -137,11 +156,18 @@ export default function Home() {
           className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl text-white"
         >
           <div className="text-center px-4 md:px-8 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to create your professional resume?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to create your professional resume?
+            </h2>
             <p className="text-lg text-indigo-100 mb-8">
-              Join thousands of job seekers who have successfully landed their dream jobs with our platform
+              Join thousands of job seekers who have successfully landed their
+              dream jobs with our platform
             </p>
-            <Button asChild size="lg" className="bg-white text-indigo-700 hover:bg-indigo-50">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-indigo-700 hover:bg-indigo-50"
+            >
               <Link href="/builder" className="flex items-center gap-2">
                 Start Building Now <ArrowRight className="h-4 w-4" />
               </Link>
@@ -160,7 +186,9 @@ export default function Home() {
                   ResumeAI
                 </span>
               </div>
-              <p className="text-gray-600">AI-powered resume builder to help you land your dream job</p>
+              <p className="text-gray-600">
+                AI-powered resume builder to help you land your dream job
+              </p>
               <div className="mt-4 flex gap-4">
                 <a
                   href="https://twitter.com"
@@ -224,15 +252,25 @@ export default function Home() {
               },
               {
                 title: "Company",
-                links: ["About Us", "Contact", "Privacy Policy", "Terms of Service"],
+                links: [
+                  "About Us",
+                  "Contact",
+                  "Privacy Policy",
+                  "Terms of Service",
+                ],
               },
             ].map((column, index) => (
               <div key={index}>
-                <h3 className="font-semibold text-gray-800 mb-4">{column.title}</h3>
+                <h3 className="font-semibold text-gray-800 mb-4">
+                  {column.title}
+                </h3>
                 <ul className="space-y-2">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <Link href="#" className="text-gray-600 hover:text-indigo-600 transition-colors">
+                      <Link
+                        href="#"
+                        className="text-gray-600 hover:text-indigo-600 transition-colors"
+                      >
                         {link}
                       </Link>
                     </li>
@@ -245,13 +283,22 @@ export default function Home() {
           <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-600">
             <p>© {new Date().getFullYear()} ResumeAI. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex gap-6">
-              <Link href="#" className="text-sm hover:text-indigo-600 transition-colors">
+              <Link
+                href="#"
+                className="text-sm hover:text-indigo-600 transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm hover:text-indigo-600 transition-colors">
+              <Link
+                href="#"
+                className="text-sm hover:text-indigo-600 transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link href="#" className="text-sm hover:text-indigo-600 transition-colors">
+              <Link
+                href="#"
+                className="text-sm hover:text-indigo-600 transition-colors"
+              >
                 Cookie Policy
               </Link>
             </div>
@@ -259,5 +306,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
